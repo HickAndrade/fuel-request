@@ -9,11 +9,12 @@ interface Props {
 export const Layout: React.FC<Props> = ({ children }) => {
 
     return(
-        <div className='app-layout'>
+    <div className='app-layout'>
             <Navbar items={[]} />
+        <div>
             {children}
-            <h1>teste</h1>
         </div>
+    </div>
     )
 }
 
