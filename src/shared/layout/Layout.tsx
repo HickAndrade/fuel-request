@@ -11,7 +11,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
     return(
     <div className='app-layout'>
             <Navbar items={[]} />
-        <div>
+        <div className='app-children'>
             {children}
         </div>
     </div>

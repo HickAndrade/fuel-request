@@ -9,8 +9,7 @@ interface Props {
     }[];
 }
 
-const Navbar: React.FC<Props> = ({ items }) =>{
-    return(
+const Navbar: React.FC<Props> = ({ items }) => (
         <nav className='navigation-bar'>
             <ul>
                 {items.map(({ label,to }, index) => (
@@ -21,6 +20,5 @@ const Navbar: React.FC<Props> = ({ items }) =>{
             </ul>
         </nav>
     );
-};
 
 export default Navbar;

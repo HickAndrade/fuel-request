@@ -3,9 +3,17 @@
     max-width: 10rem;
     max-height: 10rem;
     padding: 1rem;
+    margin: 1rem;
+    cursor: pointer;
     font-family: 'Quicksand';
     background-color: #1C1B20;
-    border-radius: 2px;
+    border-radius: 5px;
     color: white;
     text-align: center;
+    &:hover{
+        transition: all .2s ease-out;
+        background-color: rgb(226, 226, 226);
+        color:black;
+        transform: scale(1.05);
+    }
 }

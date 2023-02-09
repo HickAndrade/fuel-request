@@ -1,7 +1,6 @@
 .menu-options{
-    background-color: yellow;
-    width: 100%;
+    width: 40%;
     display: flex;
-    flex-direction: row;
-    
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

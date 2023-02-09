@@ -1,0 +1,30 @@
+input,
+select{
+    width: 8rem;
+    height: 1.3rem;
+    border-radius: 5px;
+    border: none;
+}
+select{
+    height: 1.5rem;
+}
+
+label{
+    padding: 2px;
+    margin: 10px;
+}
+@media only screen and (max-width: 800px) {
+    .select-field{
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .input-field{
+        text-align: center;
+        width: 100%;
+
+        input{
+            width: 8.5rem;
+        }
+    }
+}

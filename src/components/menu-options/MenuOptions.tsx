@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../shared/components/button/Button';
+import { Button } from '../../shared/components/button';
 import './MenuOptions.scss'
 
 interface Options {
@@ -9,12 +9,12 @@ interface Options {
     }[];
 }
 
-const MenuOptions: React.FC<Options> = ({ config }) => {
+const MenuOptions = ({ config }:Options): JSX.Element => {
   return(
     <div className='menu-options'>
       {
         config.map(({ onClick, text }) => (
-            <Button onClick={ () => onClick() } text={text}/>
+            <Button key={text} onClick={ () => onClick() } text={text}/>
         ))
       }
     </div>
