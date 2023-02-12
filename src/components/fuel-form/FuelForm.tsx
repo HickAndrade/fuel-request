@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SubmitButton } from "../../shared/components/button";
 import { InputField, SelectField } from "../../shared/components/field/index";
 import './FuelForm.scss';
@@ -9,6 +9,13 @@ interface FuelFormProps {
 }
 
 const FuelForm = ({ children, onClick }: FuelFormProps): JSX.Element =>{
+   const[tankOptions, setTankOptions] = useState([]);
+
+    useEffect(() => {
+        
+    }, [])
+
+
     return (
         <div className="fuel-form">
             <div className="budget-fuel">
@@ -16,7 +23,7 @@ const FuelForm = ({ children, onClick }: FuelFormProps): JSX.Element =>{
             </div>
             <div className="form-header">
               <InputField fieldName="Litros" type="number" /> 
-              <SelectField fieldName="Tanque" options={[{label:'test', value: 'test'}]} onChange={() =>{}}/>
+              <SelectField fieldName="Tanque" options={tankOptions} onChange={() =>{}}/>
             </div>
             <span className="underline"/>
             <div>
