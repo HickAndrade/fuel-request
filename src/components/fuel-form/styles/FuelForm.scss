@@ -7,8 +7,9 @@
     background-color: #1C1B20;
     border-radius: 5px;
     width: 40%;
+    border: 1px solid black;
     align-items: center;
-    height: 10rem;
+    height: auto;
     .form-header{
         position: relative;
         display: flex;
@@ -27,6 +28,9 @@
         height: 1px;
         background-color: rgb(255, 255, 255);
         width: 15rem;
+    }
+    .redirect-info{
+        margin: 1rem;
     }
 }
 

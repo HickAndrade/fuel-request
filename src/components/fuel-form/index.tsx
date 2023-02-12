@@ -1,4 +1,4 @@
-import FuelForm from "./FuelForm";
+import FuelForm from "./components/FuelForm";
 
 export {
     FuelForm

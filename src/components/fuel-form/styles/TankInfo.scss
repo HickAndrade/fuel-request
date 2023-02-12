@@ -1,0 +1,27 @@
+.tank-wrapper{
+    transition: all .7s;
+    width:  100%;
+    background-color: blue;
+    flex-wrap: wrap;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    background-color: rgb(248, 248, 248);
+    border-radius: 5px 5px 0px 0px;
+    position: relative;
+    overflow: hidden;
+    .tank-info {
+        animation-delay: 1s;
+        transition: all 1s;
+        height: 3rem;
+        margin: .7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h4, p {
+            display: flex;
+            margin: 0;
+        }      
+    }
+}
