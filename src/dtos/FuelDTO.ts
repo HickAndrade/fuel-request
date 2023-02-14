@@ -1,4 +1,4 @@
-export interface Fuel {
+export interface FuelDTO {
     type: string;
     liters: number;
 }

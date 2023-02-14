@@ -9,7 +9,8 @@
     width: 40%;
     border: 1px solid black;
     align-items: center;
-    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 36px 0px;
+    padding-bottom: 1rem;
     .form-header{
         position: relative;
         display: flex;
@@ -30,12 +31,36 @@
         width: 15rem;
     }
     .redirect-info{
-        margin: 1rem;
+        padding-top: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        color: white;
+        font-family: 'Quicksand';
+        font-weight: 500;
+        align-items: center;
+        justify-content: space-between;
+        height: 4rem;
+        width: 100%;
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1100px) {
     .fuel-form{
-        width: 300px;
+        width: 400px;
+        .fuel-header{
+
+        }
     }
-   }
+
+    @media only screen and (max-width: 800px) {
+        .fuel-form{
+            width: 300px;
+            .fuel-header{
+    
+            }
+        }
+       }    
+}

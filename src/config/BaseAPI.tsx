@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios';
-import { apiConfig } from '../config/api';
+import { apiConfig } from './api';
 
 export abstract class BaseAPI {
     protected baseUrl: string;
