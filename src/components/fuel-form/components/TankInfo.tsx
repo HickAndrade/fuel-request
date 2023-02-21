@@ -15,7 +15,7 @@ const TankInfo = ({ TankInfo }: { TankInfo: TankDTO }): JSX.Element => {
     }
 
     useEffect(() => {
-        if(TankInfo.tankId !== 0){
+        if(TankInfo.id !== 0){
             animationEffect();
         }
         
@@ -23,10 +23,10 @@ const TankInfo = ({ TankInfo }: { TankInfo: TankDTO }): JSX.Element => {
 
     return (
         <div className='tank-wrapper' onClick={animationEffect}>
-            <ul className="tank-info" id='tank-info' key={TankInfo.tankId}>
+            <ul className="tank-info" id='tank-info' key={TankInfo.id}>
                 <li>
                     <h4>Tanque</h4>
-                    <p>{TankInfo.tankId}</p>     
+                    <p>{TankInfo.name}</p>     
                 </li>
                 <li>
                     <h4>Quantidade Max.</h4>

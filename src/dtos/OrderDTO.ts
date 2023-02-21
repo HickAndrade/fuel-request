@@ -2,10 +2,10 @@ import { FuelDTO } from "./FuelDTO";
 import { TankDTO } from "./TankDTO";
 
 export interface OrderDTO {
-    orderId: number;
-    orderDate: string | Date;
-    equipamentType: string;
-    employee: string;
+    id: number;
+    date: string | Date;
+    equipament?: string;
+    employeeName?: string;
     tank: TankDTO;
     fuel: FuelDTO;
 }

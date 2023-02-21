@@ -1,7 +1,8 @@
 import { FuelDTO } from "./FuelDTO";
 
 export interface TankDTO {
-    tankId: number;
+    id: number;
+    name:string;
     maxLiters: number;
     fuel: FuelDTO;
 }

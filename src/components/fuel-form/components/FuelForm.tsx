@@ -12,32 +12,42 @@ interface FuelFormProps {
     tankFields?: TankDTO;
 }
 
+interface TankSelectProps {
+    value: number;
+    label: string;
+}
+
+
 const FuelForm = ({children, onClickSubmit }: FuelFormProps): JSX.Element =>{
-   const[tankOptions, setTankOptions] = useState([
-        {value:'01', label: 'Tank 01'},
-        {value:'02', label: 'Tank 02'},
-        {value:'03', label: 'Tank 03'},
-    ]);
-    const[tankHeader, setTankHeader] = useState<TankDTO>({tankId: 0,fuel: {liters: 0, type: 'diesel'}, maxLiters: 0});
+   const[tankOptions, setTankOptions] = useState<TankSelectProps[]>([]);
+    const[tankHeader, setTankHeader] = useState<TankDTO>({
+        id: 0,
+        name: '',
+        fuel:{
+            type: '',
+            liters: 0
+        }, 
+        maxLiters: 0
+    });
 
-
-    async function showingInfo(){
-        const result:TankDTO = await tankService.getTankInfoById(1);
-        setTankHeader(result);
+    async function showTankInfo(tankId: number){
+        const tankInfo:TankDTO = await tankService.getTankInfoById(tankId);
+        setTankHeader(tankInfo);
     }
 
-    
+    async function getTankOptions(){
+        const tankInfo:TankDTO[] = await tankService.getTank();
+        setTankOptions(() => tankInfo.map(({id, name}) => ({value: id, label: name })))
+    }
 
-
-  // eslint-disable-next-line no-lone-blocks
-  {/* Este componente vai instanciar o filho e direcionar para o serviço responsavel (Inserção ou retirada de combustivel) */}
+    useEffect(() => { getTankOptions(); })
   
     return (
         <div className="fuel-form">
             <TankInfo TankInfo={tankHeader}/>
             <div className="form-header">
               <InputField fieldName="Litros" type="number" /> 
-              <SelectField fieldName="Tanque" options={tankOptions} onChange={() => showingInfo()}/>
+              <SelectField fieldName="Tanque" options={tankOptions} onChange={(e) => showTankInfo(Number(e))}/>
             </div>
             <span className="underline"/>
             <div className="redirect-info">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/Field.scss'
 
 interface SelectProps {
-    options: Array<{value: string, label: string}>;
+    options: Array<{value: number, label: string}>;
     onChange:(value: string) => void;
     fieldName: string;
 }

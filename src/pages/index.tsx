@@ -17,8 +17,12 @@ export const IndexPage = (): JSX.Element => {
         <MainTitle title='Controle de Combustível dos Tanques' />
       </div>
       <MenuOptions config={[
-        { text: 'Abastecer Tanque', onClick: () => {navigate('/')} },
-        { text: 'Realizar Requisição', onClick: () => {navigate('/request-fuel')} }
+        { text: 'Abastecer Tanque', onClick: () => {
+          window.location.href = '/request-fuel'
+        } },
+        { text: 'Realizar Requisição', onClick: () => {
+          navigate('/request-fuel')
+        } }
       ]}/>
 
     </Layout>
