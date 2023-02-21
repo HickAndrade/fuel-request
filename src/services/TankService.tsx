@@ -1,9 +1,8 @@
-import { TankDTO } from "../dtos/TankDTO";
 import { Tank } from "../models/Tank";
 import { BaseAPI } from "../config/BaseAPI";
 
 export interface ITankService {
-    CreateTank(tank: TankDTO): Promise<void>;
+    CreateTank(tank: Tank): Promise<void>;
     getTank(tankId: number): Promise<Tank[]>;
     getTankInfoById(tankId: number): Promise<Tank>;
     supplyTankFuel(tankId: number, qtdSupplied: number): Promise<void>;
@@ -12,11 +11,11 @@ export interface ITankService {
 
 export class TankService extends BaseAPI implements ITankService {
     
-    async CreateTank(tank: TankDTO): Promise<void> {
-        throw new Error("Cria um tanque seguindo o padrão do DTO");
+    async CreateTank(tank: Tank): Promise<void> {
+        throw new Error("Cria um tanque seguindo o padrão.");
     }
     async getTank(): Promise<Tank[]> {
-       const allTanks: TankDTO[] = [{
+       const allTanks: Tank[] = [{
         id: 1,
         fuel: {
             liters: 5000,
@@ -37,7 +36,7 @@ export class TankService extends BaseAPI implements ITankService {
        return allTanks;
     }
     async getTankInfoById(tankId: number): Promise<Tank> {
-        const tankInfo: TankDTO = {
+        const tankInfo: Tank = {
          id: 1,
          name: 'Tanque 02',
          fuel: {

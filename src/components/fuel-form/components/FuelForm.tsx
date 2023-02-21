@@ -3,6 +3,7 @@ import { SubmitButton } from "../../../shared/components/button";
 import { InputField, SelectField } from "../../../shared/components/field/index";
 import TankInfo from "./TankInfo";
 import { tankService } from "../../../services";
+import { Tank } from "../../../models/Tank";
 import { TankDTO } from "../../../dtos/TankDTO";
 import '../styles/FuelForm.scss';
 
@@ -20,7 +21,7 @@ interface TankSelectProps {
 
 const FuelForm = ({children, onClickSubmit }: FuelFormProps): JSX.Element =>{
    const[tankOptions, setTankOptions] = useState<TankSelectProps[]>([]);
-    const[tankHeader, setTankHeader] = useState<TankDTO>({
+    const[tankHeader, setTankHeader] = useState<Tank>({
         id: 0,
         name: '',
         fuel:{
@@ -31,7 +32,7 @@ const FuelForm = ({children, onClickSubmit }: FuelFormProps): JSX.Element =>{
     });
 
     async function showTankInfo(tankId: number){
-        const tankInfo:TankDTO = await tankService.getTankInfoById(tankId);
+        const tankInfo:Tank = await tankService.getTankInfoById(tankId);
         setTankHeader(tankInfo);
     }
 
@@ -40,7 +41,7 @@ const FuelForm = ({children, onClickSubmit }: FuelFormProps): JSX.Element =>{
         setTankOptions(() => tankInfo.map(({id, name}) => ({value: id, label: name })))
     }
 
-    useEffect(() => { getTankOptions(); })
+    useEffect(() => { getTankOptions(); }, [])
   
     return (
         <div className="fuel-form">

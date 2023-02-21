@@ -3,9 +3,9 @@ import { TankDTO } from "./TankDTO";
 
 export interface OrderDTO {
     id: number;
+    tank?: number;
     date: string | Date;
     equipament?: string;
     employeeName?: string;
-    tank: TankDTO;
-    fuel: FuelDTO;
+    fuel?: FuelDTO;
 }

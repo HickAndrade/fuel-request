@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import '../styles/TankInfo.scss'
-import { TankDTO } from '../../../dtos/TankDTO'
+import { Tank } from "../../../models/Tank";
 
-const TankInfo = ({ TankInfo }: { TankInfo: TankDTO }): JSX.Element => {
+const TankInfo = ({ TankInfo }: { TankInfo: Tank }): JSX.Element => {
 
     const animationEffect = () => {
         const showInfo = document.getElementById('tank-info')!
