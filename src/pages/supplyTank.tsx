@@ -7,7 +7,7 @@ export const SupplyTankPage = (): JSX.Element => {
  return(
         <Layout>
             <MainTitle title='Abastecer Tanque' />
-            <FuelForm />    
+             
         </Layout>
     )
 };

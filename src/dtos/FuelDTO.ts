@@ -1,4 +1,4 @@
 export interface FuelDTO {
-    type: string;
+    type?: string;
     liters: number;
 }

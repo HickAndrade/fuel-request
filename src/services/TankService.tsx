@@ -52,7 +52,7 @@ export class TankService extends BaseAPI implements ITankService {
         throw new Error("Atualiza a quantidade Abastecida baseada no ID do tanque");
     }
     async requestTankFuel(tankId: number, qtdSupplied: number): Promise<void> {
-        throw new Error("Atualiza a quantidade retirada baseada no ID do tanque");
+       
     }
     
 }

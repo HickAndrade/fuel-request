@@ -36,6 +36,7 @@ export class OrderService extends BaseAPI implements IOrderService {
 
         return fuelOrders;
     }
+    
     async getFuelOrderById(orderId: number): Promise<Order> {
     
         const fuelOrders: Order = {
