@@ -3,9 +3,9 @@ import { Dialect, Sequelize } from 'sequelize';
 
 dotenv.config();
 
-const { DB_USER, DB_PASSWORD, DB_NAME, DB_PORT, DB_HOST, DIALECT } = process.env;
+const { DB_USER, DB_PASSWORD, DB_NAME, DB_PORT, DB_HOST, DIALECT, NODE_ENV } = process.env;
 
-export const databaseCredentials = {
+ const databaseCredentials = {
   development: {
     username: DB_USER as string,
     password: DB_PASSWORD,
@@ -32,10 +32,13 @@ export const databaseCredentials = {
   }
 };
 
+
 const { username, password, database, host, port, dialect } = databaseCredentials.development;
+
 
 export const connection = new Sequelize(database, username, password, {
   dialect,
   host,
   port
 });
+
